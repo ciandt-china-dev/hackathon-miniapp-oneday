@@ -21,10 +21,10 @@ Page({
     _this.setData({
       category: "loading"
     })
-    // utils.wxGetData(dataApi, {
-    //   success: _this.getData,
-    //   fail: _this.failData
-    // })
+    utils.wxGetData(dataApi, {
+       success: _this.getData,
+       fail: _this.failData
+    })
   },
   onShow: function () {
     // 页面显示
@@ -56,11 +56,29 @@ Page({
   },
   getData: function (res) {
     var _this = this;
+    var _res = res;
     if (res.data.status == "ok") {
-      _this.setData({
-        category: res.data.type,
-        detaildats: res.data.result
+      wx.getNetworkType({
+        success: function(res) {
+          var action = "pause";
+          if(res.networkType == "wifi"){
+            action = "play";
+          }
+          console.log(action);
+          _this.setData({
+            musicAction: {
+              actions:{
+                method: action
+              }
+            }
+          })
+          _this.setData({
+            category: _res.data.type,
+            detaildats: _res.data.result
+          })      
+        }
       })
+      
     } else {
       _this.setData({
         category: "error",
@@ -86,6 +104,7 @@ Page({
     console.log("audio pause");
   },
   shiftAudioStatus: function(){
+    console.log("shift");
     var playStatus = this.data.musicAction.actions.method,
         _status, _this = this;
 
