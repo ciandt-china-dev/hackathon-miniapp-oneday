@@ -18,12 +18,9 @@ Page({
   onReady: function () {
     var _this = this;
     // 页面渲染完成
-    _this.setData({
-      category: "loading"
-    })
     utils.wxGetData(dataApi, {
-       success: _this.getData,
-       fail: _this.failData
+      success: _this.getData,
+      fail: _this.failData
     })
   },
   onShow: function () {
