@@ -1,6 +1,6 @@
-<import src="../components/cookbook/cookbook.wxml"/>
-<import src="../components/music/music.wxml"/>
-<import src="../components/error/error.wxml"/>
+<import src="../components/cookbook/cookbook.wxml" />
+<import src="../components/music/music.wxml" />
+<import src="../components/error/error.wxml" />
 <view class="container">
   <block wx:if='{{category == "cookbook"}}'>
     <template is="cookbook" data="{{...detaildats}}"></template>
@@ -9,10 +9,19 @@
     <template is="music" data="{{...detaildats, ...musicAction}}"></template>
   </block>
   <block wx:elif='{{category == "loading"}}'>
-    <view>is loading</view>
+    <view class="loading">
+      <image class="loading-img" src="../images/loading.png"></image>
+    </view>
   </block>
   <block wx:else>
     <template is="error"></template>
+  </block>
+  <block wx:if="{{category != '' && category !='error'}}">
+    <view class="action-btn clearfix">
+      <text wx:if="{{like}}" class="btn like" bindtap="like">like</text>
+      <text wx:else class="btn like unlike" bindtap="like">unlike</text>
+      <text class="btn share">share</text>
+    </view>
   </block>
   <button class="page-reload" bindtap="refresh">换</button>
 </view>

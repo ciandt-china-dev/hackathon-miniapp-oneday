@@ -16,6 +16,7 @@ page{
 .music-item{
   padding: 20rpx;
 }
+.loading,
 .some-wrong{
   height: 100%;
   display: flex;
@@ -25,18 +26,54 @@ page{
   padding: 200rpx 0;
   box-sizing: border-box;
 }
+.loading-img{
+  width: 300px;
+  height: 284px;
+}
 .page-reload{
+    width: 35px;
+    height: 35px;
     position: fixed;
     right: 20rpx;
-    bottom: 20rpx;
+    bottom: 20%;
     border-radius: 50%;
-    background-color: rgba(234,152,108, 0.75);
-    color: #fff;
+    background: rgba(234,152,108, 0.75) url(../images/fresh.png) center no-repeat;
+    background-size: 95% auto;
+    overflow: hidden;
+    text-indent: -9999px;
 }
 .page-title{
     display: block;
     text-align: center;
     font-size: 1.5rem;
+}
+.action-btn{
+  padding: 20rpx;
+}
+.btn{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+}
+.action-btn .btn{
+  border: 0;
+  border-radius: 0;
+  text-indent: -99999px;
+  overflow: hidden;
+}
+.like{
+  background: url(../images/like.png) center no-repeat;
+  background-size: 100% auto;
+  float: left;
+}
+.unlike{
+  background: url(../images/unlike.png) center no-repeat;
+  background-size: 100% auto;  
+}
+.share{
+  float: right;
+  background: url(../images/share.png) center no-repeat;
+  background-size: 100% auto; 
 }
 
 @import "../components/cookbook/cookbook.wxss";

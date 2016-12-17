@@ -10,22 +10,7 @@ Page({
         method: "pause"
       }
     },
-    musicData: {
-      "songname": "长大以后的世界",
-      "seconds": 232,
-      "albummid": "002hDQTi1Zsn3w",
-      "songid": 109106698,
-      "singerid": 161301,
-      "albumpic_big": "http:\/\/i.gtimg.cn\/music\/photo\/mid_album_300\/3\/w\/002hDQTi1Zsn3w.jpg",
-      "albumpic_small": "http:\/\/i.gtimg.cn\/music\/photo\/mid_album_90\/3\/w\/002hDQTi1Zsn3w.jpg",
-      "downUrl": "http:\/\/dl.stream.qqmusic.qq.com\/109106698.mp3?vkey=37004D388C6B2A0259A8BFDBF5DB4C4403E29217D5FAA6360EC177FB819E943D5F4035E96C7B7431A1A37067D30896121B7788FE4432986B&guid=2718671044",
-      "url": "http:\/\/ws.stream.qqmusic.qq.com\/109106698.m4a?fromtag=46",
-      "singername": "王源",
-      "albumid": 1675984
-    },
-    bookdata: {
-      name: "book1"
-    }
+    like: false
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
@@ -33,13 +18,13 @@ Page({
   onReady: function () {
     var _this = this;
     // 页面渲染完成
-    // _this.setData({
-    //   category: "music"
-    // })
-    utils.wxGetData(dataApi, {
-      success: _this.getData,
-      fail: _this.failData
+    _this.setData({
+      category: "loading"
     })
+    // utils.wxGetData(dataApi, {
+    //   success: _this.getData,
+    //   fail: _this.failData
+    // })
   },
   onShow: function () {
     // 页面显示
@@ -54,12 +39,9 @@ Page({
     var _this = this;
     // set loading
     _this.setData({
-      category: "loading"
+      category: "loading",
+      like: false
     })
-    // _this.setData({
-    //   category: "music"
-    // })
-    // get new data from service
     utils.wxGetData(dataApi, {
       success: _this.getData,
       fail: _this.failData
@@ -88,6 +70,15 @@ Page({
     console.log("api-data");
     console.log(res);
   },
+
+  //like
+  like: function(){
+    this.setData({
+        like: !this.data.like
+      })
+  },
+
+  // audio
   audioPlayed: function () {
     console.log("audio paly");
   },
