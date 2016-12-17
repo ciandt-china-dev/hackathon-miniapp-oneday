@@ -1,0 +1,44 @@
+<template name="cookbook">
+  <view class="item-content cook-item">
+    <view class="item-inner">
+      <view class="item-header">
+        <image class="pro-img" src="{{pic}}" />
+        <text class="page-title">{{name}}</text>
+        <text class="txt-conent">{{content}}</text>
+      </view>
+      <view class="steps">
+        <view class="metrial">
+        <view class="title">用料</view>
+        <view wx:for="{{material}}" wx:for-item="mitem">
+            <view class="metrial-item">
+            <view>{{mitem.mname}}</view>
+            <view class="amount">{{mitem.amount}}</view>
+            </view>
+        </view>
+        </view>
+        <view class="step-list">
+          <block wx:for="{{process}}" wx:for-item="item" wx:for-index="idx">
+            <view wx:if="{{idx==0}}">
+              <view class="step-item first">
+                <text class="title">－步骤{{idx+1}}－</text>
+                <view wx:if="{{item.pic}}" class="step-img">
+                  <image src="{{item.pic}}"></image>
+                </view>
+                <view>{{item.pcontent}}</view>
+              </view>
+            </view>
+            <view wx:else>
+              <view class="step-item">
+                <text class="title">－步骤{{idx+1}}－</text>
+                <view wx:if="{{item.pic}}" class="step-img">
+                  <image src="{{item.pic}}"></image>
+                </view>
+                <view>{{item.pcontent}}</view>
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

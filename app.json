@@ -1,12 +1,14 @@
 {
   "pages":[
+    "pages/oneday/oneday",
     "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "One Day",
     "navigationBarTextStyle":"black"
-  }
+  },
+  "debug": true
 }

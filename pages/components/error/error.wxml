@@ -1,0 +1,7 @@
+<template name="error">
+  <view class="some-wrong">
+    <image class="sorry" src="../images/sorry.png" />
+    <view class="txt">Sorry, there is something wrong.</view>
+    <view class="txt">Please try later.</view>
+  </view>
+</template>

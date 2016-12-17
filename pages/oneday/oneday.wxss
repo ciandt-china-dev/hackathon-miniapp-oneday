@@ -1,0 +1,30 @@
+/* pages/oneday/oneday.wxss */
+/* commen */
+page{
+  font-family: "Helvetica Neue", "Luxi Sans", "DejaVu Sans", Tahoma, STHeiti;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: #f6f6f6;
+}
+.clearfix:after{
+  content: '';
+  clear: both;
+  overflow: hidden;
+  height: 0; 
+  display: block; 
+}
+.page-reload{
+    position: fixed;
+    right: 20rpx;
+    bottom: 20rpx;
+    border-radius: 50%;
+    background-color: rgba(234,152,108, 0.75);
+    color: #fff;
+}
+.page-title{
+    display: block;
+    text-align: center;
+    font-size: 1.5rem;
+}
+@import "../components/cookbook/cookbook.wxss";
+@import "../components/error/error.wxss";

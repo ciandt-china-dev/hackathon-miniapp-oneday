@@ -1,0 +1,11 @@
+.some-wrong{
+    text-align: center;
+}
+.sorry{
+    width: 300rpx;
+    height: 300rpx;
+    margin-bottom: 50rpx;
+}
+.txt{
+    line-height: 1.5;
+}

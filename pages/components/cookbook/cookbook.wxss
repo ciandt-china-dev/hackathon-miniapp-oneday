@@ -1,0 +1,67 @@
+.pro-img{
+    width: 100%;
+}
+.cook-item .item-header{
+    background-color: #fff;
+    border-bottom: 1px solid #efefef;
+    color: #444;
+    margin-bottom: 20rpx;
+}
+.txt-conent{
+    display: block;
+    padding: 20rpx 30rpx 30rpx;
+}
+.steps{
+    padding:10rpx 30rpx 30rpx;
+    background-color: #fff;
+    border-top: 1px solid #efefef;
+    color: #444;
+}
+.metrial{
+    border: 1px solid #efefef;
+    background-color: #efefef;
+    border-bottom: 0;
+    border-radius: 5rpx;
+}
+.metrial .title{
+    text-align: center;
+    font-size: 1.1em;
+    padding: 10rpx;
+    color: red;
+}
+.metrial-item{
+    display: flex;
+    flex-direction: row;
+    border-top: 1px solid #fff;
+    box-sizing: border-box;
+    text-align: center;
+}
+.metrial-item .amount{
+    border-left: 1px solid #fff;
+}
+.metrial-item view{
+    flex: 1;
+    
+    padding: 10rpx;
+}
+.step-img{
+    text-align: center;
+}
+.step-item{
+    margin-top: 0.75em;
+}
+.step-item.first{
+    margin-top: 0;
+}
+.step-list .title{
+    display: block;
+    text-align: center;
+    font-size: 1.2em;
+    padding: 5px 0;
+    font-weight: bold;
+}
+.step-img image{
+    max-width: 100%;
+    border-radius: 5rpx;
+    overflow: hidden;
+}

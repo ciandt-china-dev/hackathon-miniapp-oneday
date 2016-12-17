@@ -1,0 +1,5 @@
+<template name="book">
+    <view class="book-item">
+    {{name}}
+    </view>
+</template>
