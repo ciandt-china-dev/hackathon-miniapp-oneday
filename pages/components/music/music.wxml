@@ -1,0 +1,26 @@
+<template name="music">
+  <view class="music-item">
+    <view class="music-status">
+      <view class="song-name">歌名：{{songname}}</view>
+      <view class="handed"></view>
+
+      <!--<image class="cd" src=""></image>-->
+
+      <!--<image wx:if="{{ poi.recommended }}" class="label" src="../../images/destination/recommended.png"></image>-->
+    </view>
+    <view class="c-audio" bindtap="shiftAudioStatus">
+    <audio 
+    src="{{url}}"
+    author="{{singername}}"
+    name="歌曲"
+    poster="{{albumpic_small}}"
+    bindplay="audioPlay"
+    action="{{actions}}"
+    bindplay="audioPlayed"
+    bindpause = "audioPaused"
+    controls>
+    
+    </audio>
+    </view>
+  </view>
+</template>

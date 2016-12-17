@@ -13,6 +13,18 @@ page{
   height: 0; 
   display: block; 
 }
+.music-item{
+  padding: 20rpx;
+}
+.some-wrong{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+}
 .page-reload{
     position: fixed;
     right: 20rpx;
@@ -26,5 +38,7 @@ page{
     text-align: center;
     font-size: 1.5rem;
 }
+
 @import "../components/cookbook/cookbook.wxss";
+@import "../components/music/music.wxss";
 @import "../components/error/error.wxss";

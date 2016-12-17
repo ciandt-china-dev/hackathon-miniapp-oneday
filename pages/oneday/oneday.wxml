@@ -1,12 +1,15 @@
 <import src="../components/cookbook/cookbook.wxml"/>
-<import src="../components/book/book.wxml"/>
+<import src="../components/music/music.wxml"/>
 <import src="../components/error/error.wxml"/>
 <view class="container">
   <block wx:if='{{category == "cookbook"}}'>
     <template is="cookbook" data="{{...detaildats}}"></template>
   </block>
-  <block wx:elif='{{category == "book"}}'>
-    <template is="book" data="{{...bookdata}}"></template>
+  <block wx:elif='{{category == "music"}}'>
+    <template is="music" data="{{...detaildats, ...musicAction}}"></template>
+  </block>
+  <block wx:elif='{{category == "loading"}}'>
+    <view>is loading</view>
   </block>
   <block wx:else>
     <template is="error"></template>
