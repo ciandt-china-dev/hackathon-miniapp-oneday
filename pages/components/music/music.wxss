@@ -1,3 +1,57 @@
+.music-item{
+  padding: 0 20rpx 20rpx;
+}
+.music-status{
+  margin-bottom: 50rpx;
+}
+.cd-hole{
+  position: relative;
+  text-align: center;
+  margin-top: 10rpx;
+  z-index: 3;
+}
+.cd-header{
+  height: 30px;
+  text-align: center;
+  position: relative;
+  padding-top: 10px;
+  z-index: 5;
+}
+.cd-header-top{
+  width: 40px;
+  height: 20px;
+  position: absolute;
+  z-index: 3;
+  top: 0;
+  left: 50%;
+  margin-left: -20px;
+}
+.cd-header-img{
+  position: absolute;
+  width: 80px;
+  height: 55px;
+  left: 47%;
+  top: 5px;
+  z-index: 2;
+}
+.cd-default{
+  width: 130px;
+  height: 130px;
+  overflow: hidden;
+}
+.cd-image{
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  margin-left: -35px;
+  margin-top: -39px;
+  z-index: 1;
+}
 .song-name{
-    text-align: left;
+  font-size: 1.1em;
+  margin: 5px 0;
 }

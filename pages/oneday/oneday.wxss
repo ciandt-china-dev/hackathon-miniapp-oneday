@@ -13,9 +13,6 @@ page{
   height: 0; 
   display: block; 
 }
-.music-item{
-  padding: 20rpx;
-}
 .loading,
 .some-wrong{
   height: 100%;
@@ -35,7 +32,7 @@ page{
     height: 35px;
     position: fixed;
     right: 20rpx;
-    bottom: 20%;
+    bottom: 10%;
     border-radius: 50%;
     background: rgba(234,152,108, 0.75) url(../images/fresh.png) center no-repeat;
     background-size: 95% auto;

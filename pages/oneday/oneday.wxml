@@ -6,7 +6,7 @@
     <template is="cookbook" data="{{...detaildats}}"></template>
   </block>
   <block wx:elif='{{category == "music"}}'>
-    <template is="music" data="{{...detaildats, ...musicAction}}"></template>
+    <template is="music" data="{{...detaildats, ...musicAction, cdAnimation, headerAnimation}}"></template>
   </block>
   <block wx:elif='{{category == "loading"}}'>
     <view class="loading">

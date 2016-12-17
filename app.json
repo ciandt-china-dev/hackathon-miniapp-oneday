@@ -7,7 +7,7 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "One Day",
+    "navigationBarTitleText": "ONE DAY",
     "navigationBarTextStyle":"black"
   },
   "debug": true

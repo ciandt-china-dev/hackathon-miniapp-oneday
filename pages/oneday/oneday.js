@@ -14,35 +14,68 @@ Page({
   },
   onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
+
   },
   onReady: function () {
     var _this = this;
-    // 页面渲染完成
     utils.wxGetData(dataApi, {
       success: _this.getData,
       fail: _this.failData
     })
+
+
+    _this.cdAnimation = wx.createAnimation()
+    _this.headerAnimation = wx.createAnimation({
+      transformOrigin: "0,0"
+    })
+    // 页面渲染完成
+    _this.isCdRotate()
   },
   onShow: function () {
-    // 页面显示
   },
-  onHide: function () {
-    // 页面隐藏
+  cdRotate: function (deg) {
+    this.cdAnimation.rotate(deg).step()
+    this.setData({ cdAnimation: this.cdAnimation.export() })
   },
-  onUnload: function () {
-    // 页面关闭
+  headerRotate: function(deg, translateX, y){
+    this.headerAnimation.rotate(deg).translate(translateX, y).step({ duration: 300 })
+    this.setData({ headerAnimation: this.headerAnimation.export() })
   },
-  refresh: function (e) {
+  isCdRotate: function () {
+    var _this = this
+    var isPlay = _this.data.musicAction.actions.method
+    if (isPlay == "play") {
+      
+      _this.headerRotate(30, -10. -5)
+      _this.cdRotate(30)
+      
+    } else {
+      
+      _this.headerRotate(0, 10)
+      _this.cdRotate(0)
+    }
+  },
+  resetPageData: function () {
     var _this = this;
     // set loading
     _this.setData({
       category: "loading",
-      like: false
+      like: false,
+      musicAction: {
+        actions: {
+          method: "pause"
+        }
+      }
     })
+  },
+  refresh: function (e) {
+    var _this = this;
+    _this.resetPageData();
     utils.wxGetData(dataApi, {
       success: _this.getData,
       fail: _this.failData
     });
+    _this.isCdRotate()
   },
   failData: function () {
     var _this = this;
@@ -61,7 +94,6 @@ Page({
           if(res.networkType == "wifi"){
             action = "play";
           }
-          console.log(action);
           _this.setData({
             musicAction: {
               actions:{
@@ -72,7 +104,8 @@ Page({
           _this.setData({
             category: _res.data.type,
             detaildats: _res.data.result
-          })      
+          })
+          _this.isCdRotate()    
         }
       })
       
@@ -82,15 +115,13 @@ Page({
         detaildats: {}
       })
     }
-    console.log("api-data");
-    console.log(res);
   },
 
   //like
-  like: function(){
+  like: function () {
     this.setData({
-        like: !this.data.like
-      })
+      like: !this.data.like
+    })
   },
 
   // audio
@@ -100,22 +131,23 @@ Page({
   audioPaused: function () {
     console.log("audio pause");
   },
-  shiftAudioStatus: function(){
-    console.log("shift");
+  shiftAudioStatus: function () {
     var playStatus = this.data.musicAction.actions.method,
-        _status, _this = this;
+      _status, _this = this;
 
-    if(playStatus == "play"){
-      _status = "pause";
-    }else{
-      _status = "play";
+    if (playStatus == "play") {
+      _status = "pause"
+    } else {
+      _status = "play"
     }
+
     _this.setData({
       musicAction: {
-        actions:{
+        actions: {
           method: _status
         }
       }
     })
+    _this.isCdRotate()
   }
 })
